@@ -29,10 +29,10 @@ export default function Weather() {
     }, [])
 
     return (
-        <div>
-            <h1>{weatherData.city ? weatherData.city : 'loading'}</h1>
-            <h1>{weatherData.temp ? `${weatherData.temp} ℃` : 'loading'}</h1>
-            {weatherData.icon ? <img src={weatherData.icon} alt="" /> : 'loading'}
+        <div className='main--weather'>
+            {weatherData.icon ? <img className='main--weather-icon' src={weatherData.icon} alt="weather icon" /> : 'loading'}
+            <h1 className='main--weather-temperature'>{weatherData.temp ? `${weatherData.temp} ℃` : 'loading'}</h1>
+            <h1 className='main--weather--city'>{weatherData.city ? weatherData.city : 'loading'}</h1>
         </div>
     )
 }
