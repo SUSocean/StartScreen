@@ -3,10 +3,12 @@ import React from "react";
 export default function Clock() {
 
     let currentdate = new Date()
-    const [time, setTime] = React.useState(`${currentdate.getHours()} : ${currentdate.getMinutes()}`)
+    const [time, setTime] = React.useState(`${currentdate.getHours()} : ${currentdate.getMinutes() >= 10 ? currentdate.getMinutes() : '0' + currentdate.getMinutes()
+        }`)
     setInterval(() => {
         currentdate = new Date()
-        setTime(() => (`${currentdate.getHours()} : ${currentdate.getMinutes()}`))
+        setTime(() => (`${currentdate.getHours()} : ${currentdate.getMinutes() >= 10 ? currentdate.getMinutes() : '0' + currentdate.getMinutes()
+            }`))
     }, 10000)
 
     return (

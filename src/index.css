@@ -1,3 +1,4 @@
+/* GENERIC */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,6 +12,8 @@
   height: 100vh;
   text-shadow: 1px 1px 3px rgb(126, 125, 125);
 }
+
+/* BACKGROUND */
 
 .main--background-picture {
   position: absolute;
@@ -43,6 +46,8 @@
   background-color: #222222;
 }
 
+/* WEATHER */
+
 .main--weather {
   position: absolute;
   top: 5px;
@@ -60,7 +65,15 @@
 
 .main--weather--city {
   font-size: 2.5rem;
+  padding-left: 2rem;
 }
+
+.main-wearher--warning {
+  font-size: .7rem;
+}
+
+
+/* CLOCK */
 
 .main--clock-container {
   position: absolute;

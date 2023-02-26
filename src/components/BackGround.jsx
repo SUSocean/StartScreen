@@ -9,7 +9,8 @@ export default function BackGround() {
     })
 
     React.useEffect(() => {
-        fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=${backgroundData.queryInput}&nt=1&client_id=Aa4kyolAtHfU5RSmI6ttF9F-KYV7JpF4pjX74OwEhHk`)
+        const orientation = window.screen.height >= window.screen.width ? 'portrait' : 'landscape'
+        fetch(`https://api.unsplash.com/photos/random?orientation=${orientation}&query=${backgroundData.queryInput}&nt=1&client_id=Aa4kyolAtHfU5RSmI6ttF9F-KYV7JpF4pjX74OwEhHk`)
             .then(res => res.json())
             .then(data => {
                 setBackgroundData((prevState) => ({ ...prevState, picture: data.urls.full, auth: data.user.name }))
